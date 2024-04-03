@@ -8,5 +8,7 @@ namespace TlapaleriaCeja.Utilidades
 {
     public static class Ds
     {
+        public const string Exitosa = "Exitosa";
+        public const string Error = "Error";
     }
 }

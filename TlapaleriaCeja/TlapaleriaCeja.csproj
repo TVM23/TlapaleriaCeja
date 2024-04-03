@@ -23,4 +23,8 @@
     <ProjectReference Include="..\TlapaleriaCeja.Utilidades\TlapaleriaCeja.Utilidades.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\NewFolder\" />
+  </ItemGroup>
+
 </Project>
