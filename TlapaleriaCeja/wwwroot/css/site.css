@@ -20,3 +20,22 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* INICIA CSS PARA EL SLICK CARROUSEL */
+.slick-arrow{
+    width: 30px;
+    height: 30px;
+    font-size: 1px;
+    color: transparent;
+}
+
+.slick-slide {
+    margin: 35px;
+}
+
+.slick-slide img {
+   width: 100%;
+   border: 2px solid #fff;
+ }
+
+

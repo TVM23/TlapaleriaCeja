@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+
     <style>
         .color-primario {
             color: #FFF114;
@@ -74,13 +77,13 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex;">
+                <div class="navbar-collapse collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item dropdown" style="width: 12%;">
                             <a class="nav-link text-dark dropdown-toggle text-center fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" style="width: 100%;" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" asp-area="Admin" asp-controller="Bodega" asp-action="Index">Bodegas</a></li>
                             </ul>
                         </li>
@@ -94,7 +97,7 @@
                             <a class="nav-link text-dark text-center fs-5 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contenido
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" style="width: 100%;" aria-labelledby="navbarDropdown">
                                 <li>
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Bodega" asp-action="Index">Bodegas</a>
                                 </li>
@@ -110,12 +113,13 @@
 
     </header>
 
-    <div class="container">
+    <div class="container-fluid p-0">
         <main role="main" class="pb-3">
             <partial name="_Notificaciones" />
             @RenderBody()
         </main>
     </div>
+
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted mt-5 bg-black" style="border-top: 10px solid #FFF114;">
         <!-- Seccion: Links  -->
@@ -189,13 +193,15 @@
                         </p>
                         <p>
                             <i class="bi bi-envelope color-primario me-2"></i>
-                            <a href="#" class="text-light">tlapaleriaceja@gmail.com</a>
+                            <a class="text-light" style="text-decoration: none;">tlapaleriaceja@gmail.com</a>
                         </p>
                         <p><i class="bi bi-telephone-fill color-primario me-2"></i>
-                            <a href="#" class="text-light" style="text-decoration: none;">353 105 0793</a>
+                            <a class="text-light" style="text-decoration: none;">353 105 0793</a>
                         </p>
                         <p>
-                            <i class="bi bi-facebook color-primario me-2" style="font-size: 2rem;"></i>
+                            <a href="https://www.facebook.com/profile.php?id=100077043042956">
+                                <i class="bi bi-facebook color-primario me-2" style="font-size: 2rem;"></i>
+                            </a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -215,9 +221,52 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slick_cards').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

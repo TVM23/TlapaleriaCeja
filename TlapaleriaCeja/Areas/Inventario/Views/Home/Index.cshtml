@@ -2,8 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="bg-black w-100">
-    <div id="carouselExampleIndicators" class="carousel slide">
+
+<!-- INICIA CARRUSEL -->
+<div class="bg-info">
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -30,8 +32,186 @@
         </button>
     </div>
 </div>
+<!-- FIN CATEGORIAS -->
 
-<div class="text-center mt-5" style="border-bottom: 5px solid #FFF114;">
-    <h1 class="">CATEGORÍAS DE PRODUCTOS</h1>
-    <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+
+<!-- INICIA CATEGORIAS -->
+<div class="container pb-5">
+    <div class="text-center mt-5 mb-3" style="border-bottom: 5px solid #FFF114;">
+        <h1 class="">CATEGORÍAS DE PRODUCTOS</h1>
+        <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+    </div>
+
+    <!-- Inicia zona de cards -->
+    <div class="container ps-lg-5 pe-lg-5">
+        <div class="container row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">PLOMERÍA Y FONTANERÍA</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">ELECTRICIDAD</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">TORNILLERÍA</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">HERRAMIENTAS</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">FERRETERÍA EN GENERAL</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Fin zona de cards -->
+
 </div>
+<!-- FIN CATEGORIAS -->
+
+<!-- INICIA OFERTAS -->
+<div class="container">
+    <div class="text-center mt-5 mb-3" style="border-bottom: 5px solid #FFF114;">
+        <h1 class="">OFERTAS</h1>
+        <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
+    </div>
+</div>
+
+<div class="container">
+    <div class="container">
+        <div class="slick_cards">
+            <div class="col">
+                <div class="card h-100 border-1 border-dark">
+                    <div class="container">
+                        <img src="..." class="container card-img-top border-1 border-dark" style="border: solid;" alt="...">
+                    </div>
+                    <div class="card-body border-1 border-dark p-0" style="border-top: solid;">
+                        <div class="container" id="nomProd">
+                            <p class="m-0">Contacto DPLX con tierra 3 módulos platino </p>
+                        </div>
+                        <div class="container" id="marcaProd">
+                            <p class="m-0">Leviton</p>
+                        </div>
+                        <div class="container" id="precioRayadoProd">
+                            <p class="m-0">$249.00</p>
+                        </div>
+                        <div class="container" id="precioProd">
+                            <p class="m-0">$249.00</p>
+                        </div>
+                        <div class="container" id="ofertaProd">
+                            <p class="m-0">Ahora: $200.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">2</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">3</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">4</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">5</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">6</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">7</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                    <div class="card h-100 border-1 border-dark">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body border-1 border-dark p-3" style="border-top: solid;">
+                            <h5 class="card-title text-center fw-bold m-0">8</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>      
+    </div>
+</div>
+
+
+
+
+<!-- FIN OFERTAS -->
