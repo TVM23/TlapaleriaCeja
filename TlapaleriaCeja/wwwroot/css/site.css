@@ -27,6 +27,7 @@ body {
     height: 30px;
     font-size: 1px;
     color: transparent;
+    position: absolute;
 }
 
 .slick-slide {
@@ -38,4 +39,39 @@ body {
    border: 2px solid #fff;
  }
 
+.slick-next, .slick-prev {
+    top: unset;
+    bottom: 100px;
+    z-index: 1;
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-prev {
+    left: 0;
+    
+}
+
+.slick-next1, .slick-prev1 {
+    width: 30px;
+    height: 30px;
+    font-size: 1px;
+    color: transparent;
+    position: absolute;
+    top: unset;
+    bottom: 630px;
+    z-index: 1;
+}
+
+.slick-next1 {
+    right: 0;
+}
+
+.slick-prev1 {
+    left: 0;
+}
+
+/* FIN CSS PARA EL SLICK CARROUSEL */
 
