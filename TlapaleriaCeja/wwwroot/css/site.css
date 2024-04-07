@@ -41,8 +41,27 @@ body {
     color: #FFF114 !important;
 }
 
+/* Efecto hover para el contenedor principal de la tarjeta */
+.categoria.card:hover .card-body {
+    /* Estilos para el cuerpo de la tarjeta y la imagen */
+    background-color: black !important;
+    color: #FFF114 !important;
+    border-color: #FFF114 !important;
+}
+
+.categoria.card:hover .card-img-top {
+    filter: grayscale(5%) blur(1px); /* Desenfoque y escala de grises */
+    opacity: 0.8; /* Reducción de la opacidad */
+}
+
+/* Transiciones */
+.categoria.card .card-body,
+.categoria.card .card-img-top {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, filter 0.3s, opacity 0.3s;
+}
+
 .prod-card {
-    box-shadow: 2px 10px 8px 0 rgba(22, 22, 26, 0.18);
+    box-shadow: 2px 7px 5px 0 rgba(22, 22, 26, 0.18);
 }
 
 /* INICIA CSS PARA EL SLICK CARROUSEL */
@@ -52,10 +71,11 @@ body {
     font-size: 1px;
     color: transparent;
     position: absolute;
+    border: 0px
 }
 
 .slick-slide {
-    margin:40px;
+    margin:35px;
 }
 
 .slick-slide img {
@@ -65,17 +85,20 @@ body {
 
 .slick-next, .slick-prev {
     top: unset;
-    bottom: 110px;
+    bottom: 190px;
     z-index: 1;
 }
 
 .slick-next {
     right: 0;
+    background: url("../img/flecha-correcta.png");
+    background-size: 100%;
 }
 
 .slick-prev {
     left: 0;
-    
+    background: url("../img/flecha-izquierda (2).png");
+    background-size: 100%;
 }
 
 .slick-next1, .slick-prev1 {
