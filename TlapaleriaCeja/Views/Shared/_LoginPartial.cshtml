@@ -16,11 +16,19 @@
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
+    <li class="nav-item dropdown mt-0">
+            <a class="nav-link pe-4" style="width: 12%;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle" style="color:black"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <li class="mt-0">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Registro</a>
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Iniciar Sesión</a>
+                </li>
+            </ul>
     </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+
+       
 }
 </ul>

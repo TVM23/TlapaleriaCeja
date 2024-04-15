@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-TlapaleriaCeja-b164ece3-d122-4a9d-964b-e27d31a12fda</UserSecretsId>
   </PropertyGroup>

@@ -2,10 +2,11 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   html {
     font-size: 16px;
   }
+
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -16,11 +17,6 @@ html {
   position: relative;
   min-height: 100%;
 }
-
-body {
-  margin-bottom: 60px;
-}
-
 
 /* Inicia CSS personalizado */
 
@@ -63,6 +59,16 @@ body {
 .prod-card {
     box-shadow: 2px 7px 5px 0 rgba(22, 22, 26, 0.18);
 }
+
+.botonCarritoProd button {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Agregar transición para un cambio suave */
+}
+
+    .botonCarritoProd button:hover {
+        background-color: black; /* Cambiar el fondo a negro al hacer hover */
+        color: #FFF114; /* Cambiar el color del texto a amarillo al hacer hover */
+        border-color: #FFF114; /* Cambiar el color del borde a amarillo al hacer hover */
+    }
 
 /* INICIA CSS PARA EL SLICK CARROUSEL */
 .slick-arrow {
@@ -122,3 +128,19 @@ body {
 
 /* FIN CSS PARA EL SLICK CARROUSEL */
 
+
+
+
+/* PARA QUE EL INPUT NUMBER NO TENGA FLECHITAS */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* PARA QUE EL INPUT NUMBER NO TENGA FLECHITAS  FIN */

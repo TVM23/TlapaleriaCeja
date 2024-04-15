@@ -1,0 +1,304 @@
+﻿@{
+	ViewData["Title"] = "Producto Detalle";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- BREADCRUMB AREA START -->
+<div class="text-left mt-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__breadcrumb-inner">
+                    <div class="ltn__breadcrumb-list">
+                        <ul>
+                            <li>
+                                <a style="text-decoration: none" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <span class="ltn__secondary-color"> Inicio
+                                    </span>
+                                </a>
+                            </li>
+                            <li>Producto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+<!-- SHOP DETAILS AREA START -->
+<div class="ltn__shop-details-area pb-85">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ltn__shop-details-inner mb-60">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="ltn__shop-details-img-gallery mb-0" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                                <div class="ltn__shop-details-large-img slick-initialized slick-slider" style="max-width: 100%; max-height: 100%;">
+                                    <div aria-live="polite" class="slick-list draggable">
+                                        <div class="single-large-img slick-slide" data-slick-index="0" aria-hidden="false" style="width:450px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;" tabindex="-1" role="option" aria-describedby="slick-slide00">
+                                            <img src="~/detailSpero_files/1.png" class="img-fluid" alt="Image" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 1px solid black;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="modal-product-info shop-details-info pl-0">
+                                <h2 id="product-name" class="animated fadeIn mt-5">Brake Conversion Kit</h2>
+                                <div class="product-price">
+                                    <span id="product-price">$49.00</span>
+                                    <del>$65.00</del>
+                                </div>
+                                <div class="modal-product-meta ltn__product-details-menu-1">
+                                    <ul>
+                                        <li>
+                                            <strong style="font-size: 1.4em;">Categoría:</strong>
+                                            <span>
+                                                <a style="text-decoration: none; color: black; font-size: 1.4em;" href="#">AAAAAA</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <strong style="font-size: 1.4em;">Marca:</strong>
+                                            <span>
+                                                <a style="text-decoration: none; color: black; font-size: 1.4em;" href="#">BBBBBB</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <strong style="font-size: 1.4em;">SKU:</strong>
+                                            <span>
+                                                <a style=" font-size: 1.4em;">221313S</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ltn__product-details-menu-2">
+                                    <ul>
+                                        <li>
+                                            <div class="cart-plus-minus">
+                                                <a href="#" style="color: black">
+                                                    <div class="dec qtybutton">-</div>
+                                                </a>
+                                                <input type="number" value="1" name="qtybutton" class="cart-plus-minus-box" style="-moz-appearance: textfield; -webkit-appearance: none; appearance: none;">
+                                                <a href="#" style="color: black">
+                                                    <div class="inc qtybutton">+</div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p href="#">
+                                                <span>Disponibilidad: 10</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+                                <div class="botonCarritoProd">
+                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
+                                        <p class="m-0">Agregar al carrito</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shop Tab Start -->
+                <div class="ltn__shop-details-tab-inner ltn__shop-details-tab-inner-2">
+                    <div class="ltn__shop-details-tab-menu">
+                        <div class="nav">
+                            <a style="text-decoration: none" class="show active" data-bs-toggle="tab" href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#liton_tab_details_1_1">Descripción de producto</a>
+                            <a style="text-decoration: none" data-bs-toggle="tab" href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#liton_tab_details_1_2" class="">Reseñas</a>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="liton_tab_details_1_1">
+                            <div class="ltn__shop-details-tab-content-inner">
+                                <h4 class="title-2">Lorem ipsum dolor sit amet elit.</h4>
+                                <p id="product-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                                <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="liton_tab_details_1_2">
+                            <div class="ltn__shop-details-tab-content-inner">
+                                <h4 class="title-2">Customer Reviews</h4>
+                                <div class="product-ratting">
+                                    <ul>
+                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star-half-alt"></i></a></li>
+                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="far fa-star"></i></a></li>
+                                        <li class="review-total"> <a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"> ( 95 Reviews )</a></li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <!-- comment-area -->
+                                <div class="ltn__comment-area mb-30">
+                                    <div class="ltn__comment-inner">
+                                        <ul>
+                                            <li>
+                                                <div class="ltn__comment-item clearfix">
+                                                    <div class="ltn__commenter-img">
+                                                        <img src="./detailSpero_files/1.jpg" alt="Image">
+                                                    </div>
+                                                    <div class="ltn__commenter-comment">
+                                                        <h6><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#">Adam Smit</a></h6>
+                                                        <div class="product-ratting">
+                                                            <ul>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
+                                                        <span class="ltn__comment-reply-btn">September 3, 2020</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="ltn__comment-item clearfix">
+                                                    <div class="ltn__commenter-img">
+                                                        <img src="./detailSpero_files/3.jpg" alt="Image">
+                                                    </div>
+                                                    <div class="ltn__commenter-comment">
+                                                        <h6><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#">Adam Smit</a></h6>
+                                                        <div class="product-ratting">
+                                                            <ul>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
+                                                        <span class="ltn__comment-reply-btn">September 2, 2020</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="ltn__comment-item clearfix">
+                                                    <div class="ltn__commenter-img">
+                                                        <img src="./detailSpero_files/2.jpg" alt="Image">
+                                                    </div>
+                                                    <div class="ltn__commenter-comment">
+                                                        <h6><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#">Adam Smit</a></h6>
+                                                        <div class="product-ratting">
+                                                            <ul>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                                <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="far fa-star"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
+                                                        <span class="ltn__comment-reply-btn">September 2, 2020</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- comment-reply -->
+                                <div class="ltn__comment-reply-area ltn__form-box mb-30">
+                                    <form action="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#">
+                                        <h4 class="title-2">Add a Review</h4>
+                                        <div class="mb-30">
+                                            <div class="add-a-review">
+                                                <h6>Your Ratings:</h6>
+                                                <div class="product-ratting">
+                                                    <ul>
+                                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                        <li><a href="https://tunatheme.com/tf/html/spero-preview/spero/product-details.html#"><i class="far fa-star"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-item input-item-textarea ltn__custom-icon">
+                                            <textarea placeholder="Type your comments...."></textarea>
+                                        </div>
+                                        <div class="input-item input-item-name ltn__custom-icon">
+                                            <input type="text" placeholder="Type your name....">
+                                        </div>
+                                        <div class="input-item input-item-email ltn__custom-icon">
+                                            <input type="email" placeholder="Type your email....">
+                                        </div>
+                                        <div class="input-item input-item-website ltn__custom-icon">
+                                            <input type="text" name="website" placeholder="Type your website....">
+                                        </div>
+                                        <label class="mb-0"><input type="checkbox" name="agree"> Save my name, email, and website in this browser for the next time I comment.</label>
+                                        <div class="btn-wrapper">
+                                            <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shop Tab End -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- SHOP DETAILS AREA END -->
+
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Simulando la carga de datos del producto
+            var product = {
+                name: "Producto de ejemplo",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                price: 19.99,
+                imageUrl: "https://via.placeholder.com/400"
+            };
+
+            // Mostrar los datos del producto en la página
+            $("#product-name").text(product.name);
+            $("#product-description").text(product.description);
+            $("#product-price").text("$" + product.price.toFixed(2));
+            $("#product-image").attr("src", product.imageUrl);
+
+            // Evento click del botón "Agregar al Carrito"
+            $("#btn-add-to-cart").click(function () {
+                alert("El producto ha sido agregado al carrito.");
+            });
+        });
+    </script>
+
+    <script>
+        // Obtener el elemento del contador
+        var quantityInput = document.querySelector('.cart-plus-minus-box');
+
+        // Obtener los botones de aumento y disminución
+        var decreaseButton = document.querySelector('.dec');
+        var increaseButton = document.querySelector('.inc');
+
+        // Función para manejar la disminución de la cantidad
+        decreaseButton.addEventListener('click', function () {
+            var currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        // Función para manejar el aumento de la cantidad
+        increaseButton.addEventListener('click', function () {
+            var currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+    </script>
+}
