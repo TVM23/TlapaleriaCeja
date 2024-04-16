@@ -4,21 +4,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container pt-4">
+<div class="container pt-4 mt-4">
     <div class="row">
-        <div class="col-lg-6">
-            <h2 class="text-primary">Lista de Bodegas</h2>
+        <div class="col-lg-6 d-flex justify-content-start align-items-center">
+            <h2 class="text-black">Lista de Bodegas</h2>
         </div>
-        <div class="col-lg-6">
-            <a class="btn btn-outline-primary" asp-action="Upsert">
+        <div class="col-lg-6 d-flex justify-content-end align-items-center">
+            <a class="btn btn-outline-dark" asp-action="Upsert" style="margin-bottom: .5rem">
                 Crear nueva Bodega
                 <i class="bi bi-file-plus-fill m-1"></i>
             </a>
-
         </div>
     </div>
 
-    <div class="p-4 border rounded bg-light">
+    <div class="p-4 border rounded bg-light table-responsive">
         <table id="tblDatos" class="table table-responsive, table-hover">
             <thead class="table-dark">
                 <tr>

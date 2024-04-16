@@ -1,10 +1,18 @@
-﻿<div class="d-grid gap-2 d-md-block">
-	<button type="submit" class="btn btn-primary" onfocus="false">
-		<i class="bi bi-plus-square-fill"></i>
-		Crear
-	</button>
-	<a class="btn btn-success" asp-action="Index">
-		<i class="bi bi-arrow-return-left"></i>
-		Regresar
-	</a>
+﻿<div class="row">
+    <div class="col">
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-block h-100" style="max-height:100%">
+                <i class="bi bi-plus-square-fill"></i>
+                Crear
+            </button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="d-grid gap-2">
+            <a class="regresar btn btn-success btn-block h-100" asp-action="Index" style="max-height:100%;">
+                <i class="bi bi-arrow-return-left"></i>
+                Regresar
+            </a>
+        </div>
+    </div>
 </div>
