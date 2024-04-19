@@ -50,7 +50,7 @@ html {
     opacity: 0.8; /* Reducción de la opacidad */
 }
 
-/* Transiciones */
+/* Transiciones praanimaciones card de categoria */
 .categoria.card .card-body,
 .categoria.card .card-img-top {
     transition: background-color 0.3s, color 0.3s, border-color 0.3s, filter 0.3s, opacity 0.3s;
@@ -64,11 +64,11 @@ html {
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Agregar transición para un cambio suave */
 }
 
-    .botonCarritoProd button:hover {
-        background-color: black; /* Cambiar el fondo a negro al hacer hover */
-        color: #FFF114; /* Cambiar el color del texto a amarillo al hacer hover */
-        border-color: #FFF114; /* Cambiar el color del borde a amarillo al hacer hover */
-    }
+.botonCarritoProd button:hover {
+    background-color: black; /* Cambiar el fondo a negro al hacer hover */
+    color: #FFF114; /* Cambiar el color del texto a amarillo al hacer hover */
+    border-color: #FFF114; /* Cambiar el color del borde a amarillo al hacer hover */
+}
 
 /* INICIA CSS PARA EL SLICK CARROUSEL */
 .slick-arrow {
@@ -128,9 +128,6 @@ html {
 
 /* FIN CSS PARA EL SLICK CARROUSEL */
 
-
-
-
 /* PARA QUE EL INPUT NUMBER NO TENGA FLECHITAS */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -144,3 +141,280 @@ input[type=number] {
 }
 
 /* PARA QUE EL INPUT NUMBER NO TENGA FLECHITAS  FIN */
+
+
+
+.contact_wrap li {
+    list-style: none;
+}
+
+.contact_wrap li {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    margin-bottom: 25px;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.contact_style3 {
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.contact_style3 .contact_icon {
+    border: 1px solid var(--ltn__secondary-color);
+    margin: 0 0 5px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.contact_style3 .contact_icon i {
+    line-height: 78px;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact_style3 .contact_icon::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--ltn__secondary-color);
+    z-index:;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.contact_style3:hover .contact_icon::before {
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.contact_style3:hover .contact_icon i {
+    color: #fff;
+}
+
+.contact_box {
+    position: relative;
+    padding: 50px 0px;
+    display: table;
+    width: 100%;
+}
+
+.contact_form {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    float: right;
+    margin-right: 30px;
+    position: relative;
+    z-index: 9;
+}
+
+.contact_box .map {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.contact_box .map iframe {
+    height: 100%;
+}
+
+.contact_wrap li {
+    list-style: none;
+}
+
+.contact_wrap li {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    margin-bottom: 25px;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.contact_icon {
+    margin-right: 20px;
+}
+
+.contact_icon i {
+    font-size: 34px;
+    color: var(--ltn__secondary-color);
+}
+
+.contact_text span {
+    color: #333;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.contact_text p:last-child {
+    margin-bottom: 0;
+}
+
+.contact_text a {
+    color: #687188;
+    line-height: 28px;
+}
+
+.contact_text a:hover {
+    color: var(--ltn__secondary-color);
+}
+
+.leads {
+    margin-bottom: 30px;
+}
+
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+textarea.form-control, textarea.form-control:focus {
+    height: auto;
+    padding: 12px 15px;
+}
+
+.btn-fill-out {
+    background-color: transparent;
+    border: 1px solid #FF324D;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.btn.active:focus, .btn:active:focus {
+    box-shadow: none !important;
+}
+
+.btn-fill-out {
+    background-color: transparent;
+    border: 1px solid #FF324D;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .btn-fill-out::before,
+    .btn-fill-out::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #FF324D;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+        width: 51%;
+    }
+
+    .btn-fill-out::after {
+        right: 0;
+        left: auto;
+    }
+
+    .btn-fill-out:hover:before,
+    .btn-fill-out:hover:after {
+        width: 0;
+    }
+
+    .btn-fill-out:hover {
+        color: #FF324D !important;
+    }
+
+.btn-fill-line {
+    background-color: transparent;
+    border: 1px solid #333;
+    overflow: hidden;
+    position: relative;
+    color: #fff !important;
+    transition: all 0.8s ease 0s;
+    z-index: 1;
+}
+
+    .btn-fill-line:before, .btn-fill-line:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #333;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+        width: 50%;
+    }
+
+    .btn-fill-line::after {
+        right: 0;
+        left: auto;
+    }
+
+    .btn-fill-line:hover:before,
+    .btn-fill-line:hover:after {
+        width: 0;
+    }
+
+    .btn-fill-line:hover {
+        color: #333 !important;
+    }
+
+.btn-border-fill {
+    border: 1px solid #FF324D;
+    color: #FF324D;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+    .btn-border-fill::before,
+    .btn-border-fill::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #FF324D;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+    }
+
+    .btn-border-fill::after {
+        right: 0;
+        left: auto;
+    }
+
+    .btn-border-fill:hover:before,
+    .btn-border-fill:hover:after {
+        width: 50%;
+    }
+
+    .btn-border-fill:hover {
+        color: #fff !important;
+    }

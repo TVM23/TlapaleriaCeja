@@ -885,7 +885,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="submit"],
-select,
+.status-select,
 textarea {
     background-color: var(--white);
     border: 1px solid;
@@ -905,7 +905,7 @@ input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="password"]::-webkit-input-placeholder,
 input[type="submit"]::-webkit-input-placeholder,
-select::-webkit-input-placeholder
+.status-select::-webkit-input-placeholder
 textarea::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: var(--ltn__paragraph-color);
@@ -914,6 +914,7 @@ textarea::-webkit-input-placeholder {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+.status-select:focus
 textarea:focus {
   border-color: var(--ltn__secondary-color); }
 
