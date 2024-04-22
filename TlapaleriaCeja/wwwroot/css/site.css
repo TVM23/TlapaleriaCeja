@@ -70,6 +70,7 @@ html {
     border-color: #FFF114; /* Cambiar el color del borde a amarillo al hacer hover */
 }
 
+
 /* INICIA CSS PARA EL SLICK CARROUSEL */
 .slick-arrow {
     width: 30px;
@@ -128,6 +129,7 @@ html {
 
 /* FIN CSS PARA EL SLICK CARROUSEL */
 
+
 /* PARA QUE EL INPUT NUMBER NO TENGA FLECHITAS */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -143,7 +145,34 @@ input[type=number] {
 /* PARA QUE EL INPUT NUMBER NO TENGA FLECHITAS  FIN */
 
 
+/* ---------------------------- FORM CONTROL AND FORM SELECT START---------------------------- */
+.form-control:focus, .form-select:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
+input.input-border:focus,
+.input-border:focus {
+    border: 1px solid var(--ltn__secondary-color);
+}
+
+form .textarea-field .item{
+    resize: none
+}
+
+.field .error-txt{
+    font-size: 14.5px;
+    color: red;
+    text-align: left;
+    margin: -1px 0 2px;
+    display: none;
+}
+/* ---------------------------- FORM CONTROL AND FORM SELECT END---------------------------- */
+
+
+
+/* CONTACT PAGE  START */
 .contact_wrap li {
     list-style: none;
 }
@@ -166,7 +195,7 @@ input[type=number] {
 }
 
 .contact_style3 .contact_icon {
-    border: 1px solid var(--ltn__secondary-color);
+    border: 1px solid black;
     margin: 0 0 5px;
     height: 80px;
     width: 80px;
@@ -183,22 +212,22 @@ input[type=number] {
     transition: all 0.5s ease-in-out;
 }
 
-.contact_style3 .contact_icon::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: var(--ltn__secondary-color);
-    z-index:;
-    transition: all 0.5s ease-in-out;
-    -moz-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    border-radius: 100%;
-    z-index: -1;
-}
+    .contact_style3 .contact_icon::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #FFF114;
+        z-index:;
+        transition: all 0.5s ease-in-out;
+        -moz-transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        border-radius: 100%;
+        z-index: -1;
+    }
 
 .contact_style3:hover .contact_icon::before {
     -moz-transform: scale(1);
@@ -207,7 +236,7 @@ input[type=number] {
 }
 
 .contact_style3:hover .contact_icon i {
-    color: #fff;
+    color: black;
 }
 
 .contact_box {
@@ -261,7 +290,7 @@ input[type=number] {
 
 .contact_icon i {
     font-size: 34px;
-    color: var(--ltn__secondary-color);
+    color: black;
 }
 
 .contact_text span {
@@ -313,9 +342,9 @@ textarea.form-control, textarea.form-control:focus {
 }
 
 .btn-fill-out {
-    background-color: transparent;
-    border: 1px solid #FF324D;
-    color: #fff;
+    background-color: black;
+    border: 1px solid black;
+    color: black;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -328,7 +357,7 @@ textarea.form-control, textarea.form-control:focus {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #FF324D;
+        background-color: #FFF114;
         z-index: -1;
         transition: all 0.3s ease-in-out;
         width: 51%;
@@ -345,76 +374,7 @@ textarea.form-control, textarea.form-control:focus {
     }
 
     .btn-fill-out:hover {
-        color: #FF324D !important;
+        color: #FFF114 !important;
     }
 
-.btn-fill-line {
-    background-color: transparent;
-    border: 1px solid #333;
-    overflow: hidden;
-    position: relative;
-    color: #fff !important;
-    transition: all 0.8s ease 0s;
-    z-index: 1;
-}
-
-    .btn-fill-line:before, .btn-fill-line:after {
-        position: absolute;
-        content: '';
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background-color: #333;
-        z-index: -1;
-        transition: all 0.3s ease-in-out;
-        width: 50%;
-    }
-
-    .btn-fill-line::after {
-        right: 0;
-        left: auto;
-    }
-
-    .btn-fill-line:hover:before,
-    .btn-fill-line:hover:after {
-        width: 0;
-    }
-
-    .btn-fill-line:hover {
-        color: #333 !important;
-    }
-
-.btn-border-fill {
-    border: 1px solid #FF324D;
-    color: #FF324D;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-    .btn-border-fill::before,
-    .btn-border-fill::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background-color: #FF324D;
-        z-index: -1;
-        transition: all 0.3s ease-in-out;
-        width: 0;
-    }
-
-    .btn-border-fill::after {
-        right: 0;
-        left: auto;
-    }
-
-    .btn-border-fill:hover:before,
-    .btn-border-fill:hover:after {
-        width: 50%;
-    }
-
-    .btn-border-fill:hover {
-        color: #fff !important;
-    }
+/* CONTACT PAGE END */

@@ -25,21 +25,21 @@
             <div class="row mb-2 mt-2">
                 <div class="form-group col-md-6">
                     <label>Nombre</label>
-                    <input type="text" asp-for="Nombre" class="form-control" placeholder="Nombre de la categoria" id="nombre" />
+                    <input type="text" asp-for="Nombre" class="input-border form-control" placeholder="Nombre de la categoria" id="nombre" />
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-2 mt-2">
                 <div class="form-group col-md-6">
                     <label>Descripción</label>
-                    <input type="text" asp-for="Descripcion" class="form-control" placeholder="Descripción de la categoria" />
+                    <input type="text" asp-for="Descripcion" class="input-border form-control" placeholder="Descripción de la categoria" />
                     <span asp-validation-for="Descripcion" class="text-danger"></span>
                 </div>
             </div>
             <div class="row mb-2 mt-2">
                 <div class="form-group col-md-6">
                     <label>Estado</label>
-                    <select asp-for="Estado" class="form-select">
+                    <select asp-for="Estado" class="input-border form-select">
                         <option value=true>Activo</option>
                         <option value=false>Inactivo</option>
                     </select>
