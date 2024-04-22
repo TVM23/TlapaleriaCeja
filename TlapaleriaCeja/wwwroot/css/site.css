@@ -168,6 +168,15 @@ form .textarea-field .item{
     margin: -1px 0 2px;
     display: none;
 }
+
+.field.error .item {
+    border-color: red;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
 /* ---------------------------- FORM CONTROL AND FORM SELECT END---------------------------- */
 
 

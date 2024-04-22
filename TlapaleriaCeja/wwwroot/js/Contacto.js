@@ -1,48 +1,69 @@
-﻿function validarFormulario() {
-    // Obtener los valores de los campos
-    var nombre = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var telefono = document.getElementById("phone").value;
-    var mensaje = document.getElementById("message").value;
+﻿var cont = 0;
 
-    // Verificar que los campos obligatorios no estén vacíos
-    if (nombre.trim() === "") {
-        mostrarError("El nombre no debe ir vacío");
-        return false; // Detener el envío del formulario
+function validarFormulario() {
+
+    const items = document.querySelectorAll(".item");
+    const ban = true;
+
+    for (const item of items) {
+        if (item.value == "") {
+            item.classList.add("error");
+            item.parentElement.classList.add("error");
+            cont++;
+        }
+
+        if (items[1].value != "") {
+            checkEmail();
+        }
+
+        items[1].addEventListener("keyup", () => {
+            checkEmail();
+        })
+
+        item.addEventListener("keyup", () => {
+            if (item.value != "") {
+                item.classList.remove("error");
+                item.parentElement.classList.remove("error");
+            } else {
+                item.classList.add("error");
+                item.parentElement.classList.add("error");
+                cont++;
+            }
+        })
+       
     }
-    if (email.trim() === "") {
-        mostrarError("El correo no debe ir vacío");
-        return false; // Detener el envío del formulario
-    }
-    if (telefono.trim() === "") {
-        mostrarError("Debes ingresar un número de teléfono");
-        return false; // Detener el envío del formulario
-    }
-    if (mensaje.trim() === "") {
-        mostrarError("El mensaje no debe ir vacío");
-        return false; // Detener el envío del formulario
+    if (cont > 0) {
+        cont = 0;
+        return false;
     }
 
-    // Si todos los campos están llenos, permitir el envío del formulario
     return true;
 }
 
-function mostrarError(mensaje) {
-    // Mostrar mensaje de error
-    var errorDiv = document.createElement("div");
-    errorDiv.className = "error-txt";
-    errorDiv.textContent = mensaje;
+function checkEmail() {
+    var correo = document.getElementById("email");
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const errorTxtEmail = document.querySelector(".error-txt.email");
 
-    // Insertar el mensaje de error después del campo respectivo
-    var botonEnviar = document.getElementById("submitButton");
-    botonEnviar.parentNode.insertBefore(errorDiv, botonEnviar.nextSibling);
+
+    if (!correo.value.match(emailRegex)) {
+        correo.classList.add("error");
+        correo.parentElement.classList.add("error");
+        cont++;
+
+        if (correo.value != "") {
+            errorTxtEmail.innerText = "Ingresa un correo válido"
+        } else {
+            errorTxtEmail.innerText = "El correo no debe ir vacío"
+        }
+    } else {
+        correo.classList.remove("error");
+        correo.parentElement.classList.remove("error");
+    }
 }
 
-// Agregar evento submit al formulario para llamar a la función validarFormulario
 document.getElementById("contactForm").addEventListener("submit", function (event) {
-    // Validar el formulario antes de enviarlo
     if (!validarFormulario()) {
-        // Detener el envío del formulario si la validación falla
         event.preventDefault();
         return;
     }

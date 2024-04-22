@@ -1,7 +1,7 @@
 ﻿@{
 	ViewData["Title"] = "Contacto";
 	Layout = "~/Views/Shared/_Layout.cshtml";
-    string baseUrl = "https://localhost:7177";  <!-- CAMBIAR A ENLAD¿CE DOMINIO CUANDO SE TENGA -->
+    string baseUrl = "https://localhost:7177";  <!-- CAMBIAR A ENLACE DOMINIO CUANDO SE TENGA -->
     string nextUrl = baseUrl + Url.Action("Contacto", "ProductoDetalle", new { area = "Inventario" });
 }
 
@@ -109,27 +109,25 @@
                                     <div class="error-txt">El nombre no debe ir vacío</div>
                                  </div>
                                 <div class="form-group col-md-6 mb-3 input-field field">
-                                    <input placeholder="Tu Correo *" id="email" class="input-border form-control item" name="Correo" type="email">
-                                    <div class="error-txt">El correo no debe ir vacío</div>
+                                    <input placeholder="Tu Correo *" id="email" class="input-border form-control item" name="Correo" type="text">
+                                    <div class="error-txt email">El correo no debe ir vacío</div>
                                 </div>
                                 <div class="form-group col-md-6 mb-3 input-field field">
                                     <input placeholder="Tu Número de Teléfono *" id="phone" class="input-border form-control item" name="Teléfono" type="number">
                                     <div class="error-txt">Debes ingresar un número de teléfono</div>
                                 </div>
                                 <div class="form-group col-md-6 mb-3 input-field field">
-                                    <input placeholder="Tema de discusión" id="subject" class="input-border form-control item" name="Tema" type="text">
+                                    <input placeholder="Tema de discusión *" id="subject" class="input-border form-control item" name="Tema" type="text">
+                                    <div class="error-txt">Ingresa un tema de discusión</div>
                                 </div>
                                 <div class="form-group col-md-12 mb-3 textarea-field field">
                                     <textarea placeholder="Mensaje *" id="message" class="input-border form-control item" name="Mensaje" rows="4"></textarea>
                                     <div class="error-txt">El mensaje no debe ir vacío</div>
                                 </div>
-                                <div class="col-md-12 mb-3 d-flex justify-content-center">
+                                <div class="col-md-12 mb-3 d-flex justify-content-center" id="a">
                                     <button type="submit" title="Submit Your Message" class="btn btn-fill-out" id="submitButton" value="Submit">Enviar Mensaje</button>
                                     <input type="hidden" name="_next" value="@nextUrl">
                                     <input type="hidden" name="_captcha" value="false">
-                                </div>
-                                <div class="col-md-12 mb-3 ">
-                                    <div id="alert-msg" class="alert-msg text-center"></div>
                                 </div>
                             </div>
                         </form>		
