@@ -39,7 +39,7 @@ function mostrarError(mensaje) {
 }
 
 // Agregar evento submit al formulario para llamar a la función validarFormulario
-document.getElementById("miFormulario").addEventListener("submit", function (event) {
+document.getElementById("contactForm").addEventListener("submit", function (event) {
     // Validar el formulario antes de enviarlo
     if (!validarFormulario()) {
         // Detener el envío del formulario si la validación falla
