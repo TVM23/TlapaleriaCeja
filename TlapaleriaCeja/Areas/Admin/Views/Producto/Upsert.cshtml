@@ -1,0 +1,187 @@
+﻿@model TlapaleriaCeja.Modelos.ViewModels.ProductoVM
+@using TlapaleriaCeja.Utilidades
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Crear Producto Nuevo";
+}
+
+<!-- Creamos el formulario de envio de informacion -->
+<div class="container px-1 py-5 mx-auto pt-4 mt-5 card" style="box-shadow: 2px 2px 10px 2px rgba(22, 22, 26, 0.18);">
+    <form method="post" class="row d-flex justify-content-center" enctype="multipart/form-data">
+        <div style="padding-left:10%; padding-right:10%; padding-bottom:inherit.4rem;">
+            <div class="row border-0"
+                    <div asp-validation-summary="ModelOnly" class="text-danger">
+                    </div>
+             </div>
+            <!-- Cambio de titulo de la pagina -->
+            @if (Model.Producto.Id != 0)
+            {
+                titulo = "Editar Producto";
+                <input asp-for="Producto.Id" hidden />
+                <input asp-for="Producto.ImagenUrl" hidden />
+            }
+            <!-- Mostrar titulo de la pagina -->
+            <div class="col-12 border-botton p-0">
+                <h1 class="text-dark">@titulo</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="container">
+                        <!-- Campo nombre -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Nombre</label>
+                                <input type="text" asp-for="Producto.Nombre" class="input-border form-control" placeholder="Nombre del producto" id="nombre" />
+                                <span asp-validation-for="Producto.Nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo SKU -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>SKU</label>
+                                <input type="text" asp-for="Producto.SKU" class="input-border form-control" placeholder="SKU del producto" id="nombre" />
+                                <span asp-validation-for="Producto.SKU" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo Numero Serie -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Numero de serie</label>
+                                <input type="text" asp-for="Producto.NumeroSerie" class="input-border form-control" placeholder="Número se serie" id="nombre" />
+                                <span asp-validation-for="Producto.NumeroSerie" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo Descripción -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Descripción</label>
+                                <input type="text" asp-for="Producto.Descripcion" class="input-border form-control" placeholder="Descripción del producto" id="nombre" />
+                                <span asp-validation-for="Producto.Descripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo Costo -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Costo</label>
+                                <input type="text" asp-for="Producto.Costo" class="input-border form-control" id="nombre" />
+                                <span asp-validation-for="Producto.Costo" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo Precio -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Precio</label>
+                                <input type="text" asp-for="Producto.Precio" class="input-border form-control" id="nombre" />
+                                <span asp-validation-for="Producto.Precio" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo Imagen -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Imagen</label>
+                                <input type="file" accept="image/png,image/gif,image/jpeg" name="files" id="imagenId" class="form-control" />
+                                <span asp-validation-for="Producto.ImagenUrl" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Lista Categoria -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Categoría</label>
+                                <select asp-for="Producto.CategoriaId" asp-items="@Model.CategoriaLista" class="form-select">
+                                    <option disabled selected>-- Selecciona una Categoría --</option>
+                                </select>
+                                <span asp-validation-for="Producto.CategoriaId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Lista Marca -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Marca</label>
+                                <select asp-for="Producto.MarcaId" asp-items="@Model.MarcaLista" class="form-select">
+                                    <option disabled selected>-- Selecciona una Marca --</option>
+                                </select>
+                                <span asp-validation-for="Producto.MarcaId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!-- Campo estado -->
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-10">
+                                <label>Estado</label>
+                                <select asp-for="Producto.Estado" class="input-border form-select">
+                                    <option value=true>Activo</option>
+                                    <option value=false>Inactivo</option>
+                                </select>
+                                <span asp-validation-for="Producto.Estado" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mostrar Imagen  -->
+                <div class="col-lg d-flex justify-content-center align-items-center">
+                    @if (Model.Producto.Id != 0)
+                    {
+                        <img src="@Ds.ImagenRuta@Model.Producto.ImagenUrl" width="100%" style="border-radius: 5px; border: 1px solid #bbb" />
+                    }
+                </div>
+            </div>
+            
+            <!-- Presentamos vistas parciales -->
+            <hr class="mt-3" />
+            <div class="mt-3">
+                @if (Model.Producto.Id != 0)
+                {
+                    <partial name="_botonesActualizarYRegresar" model="Model.Producto.Id" />
+                }
+                else
+                {
+                    <button type="submit" onclick="return validarImagen()" class="btn btn-primary">
+                        Crear
+                    </button>
+                    <a asp-action="Index" class="btn btn-success">
+                        Regresar
+                    </a>
+                }
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Configuramos por medio de un script al dom para que use los helper tags -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById("nombre").addEventListener('change', function () {
+            ValidarNombre();
+        });
+
+        function ValidarNombre() {
+            var url = '@Url.Content("~/")' + "Admin/Producto/ValidarNombre";
+            var id = '#id';
+            var nombre = '#nombre';
+
+            $.getJSON(url, { id: $(id).val(), nombre: $(nombre).val() }, function (data) {
+                $.each(data, function (key, value) {
+                    if (value) {
+                        var nombre = document.getElementById("nombre");
+                        swal("ERROR", "Este Nombre ya Existe", "error");
+                        nombre.value = "";
+                    }
+                });
+            })
+        }
+    </script>
+
+    <script>
+        function validarImagen() {
+            if (document.getElementById("imagenId").value == "") {
+                swal("ERROR", "Seleccione una imagen!", "error");
+                return false;
+            }
+            return true;
+        }
+    </script>
+}
+
+
+

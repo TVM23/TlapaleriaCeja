@@ -10,5 +10,7 @@ namespace TlapaleriaCeja.Utilidades
     {
         public const string Exitosa = "Exitosa";
         public const string Error = "Error";
+        public const string ImagenRuta = @"\img\productos\";
+        public const string CategoriaImagenRuta = @"\img\categorias\";
     }
 }

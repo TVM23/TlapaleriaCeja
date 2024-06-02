@@ -14,10 +14,11 @@ namespace TlapaleriaCeja.Modelos
         [Required(ErrorMessage = "El campo nombre es requerido")]
         [MaxLength(60, ErrorMessage = "El nombre solo se compone de 60 caracteres como máximo")]
         public string Nombre { get; set; }
-        [Required(ErrorMessage = "El campo nombre es requerido")]
+        [Required(ErrorMessage = "El campo descripcion es requerido")]
         [MaxLength(100, ErrorMessage = "La descripción solo se compone de 100 caracteres como máximo")]
         public string Descripcion { get; set; }
         [Required(ErrorMessage = "El estado de la categoria es requerido")]
         public bool Estado { get; set; }
+        public string ImagenUrl { get; set; }
     }
 }

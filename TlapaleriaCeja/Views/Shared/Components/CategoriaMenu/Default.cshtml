@@ -1,0 +1,9 @@
+﻿<li class="mt-0">
+    @foreach (var categoria in Model)
+    {
+        if(categoria.Estado == true)
+        {
+            <a class="dropdown-item" style="white-space: normal;" asp-area="Admin" asp-controller="Bodega" asp-action="Index">@categoria.Nombre</a>
+        }
+    }
+</li>

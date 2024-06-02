@@ -1,5 +1,10 @@
-﻿@{
+﻿
+@using TlapaleriaCeja.Utilidades
+@{
     ViewData["Title"] = "Home Page";
+    var categorias = ViewData["Categorias"] as IEnumerable<Categoria>;
+    var productos = ViewData["Productos"] as IEnumerable<Producto>;
+    var marcas = ViewData["Marcas"] as IEnumerable<Marca>;
 }
 
 
@@ -47,56 +52,21 @@
     <!-- Inicia zona de cards -->
     <div class="container ps-lg-5 pe-lg-5">
         <div class="container row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-            <div class="col">
-                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
-                    <div class="categoria card h-100 border-1 border-dark">
-                        <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg" class="card-img-top h-100" alt="...">
-                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
-                            <h5 class="card-title text-center fw-bold m-0">PLOMERÍA Y FONTANERÍA</h5>
+            @foreach (var categoria in categorias)
+            {
+                <div class="col">
+                    <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
+                        <div class="categoria card h-100 border-1 border-dark">
+                            <img src="@Ds.CategoriaImagenRuta@categoria.ImagenUrl" class="card-img-top h-100" alt="...">
+                            <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
+                                <h5 class="card-title text-center fw-bold m-0 text-uppercase">
+                                    @categoria.Nombre
+                                </h5>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
-                    <div class="categoria card h-100 border-1 border-dark">
-                        <img src="https://i.blogs.es/0ca9a6/aa/1366_2000.jpeg" class="card-img-top h-100" alt="...">
-                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
-                            <h5 class="card-title text-center fw-bold m-0">ELECTRICIDAD</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
-                    <div class="categoria card h-100 border-1 border-dark">
-                        <img src="..." class="card-img-top h-100" alt="...">
-                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
-                            <h5 class="card-title text-center fw-bold m-0">TORNILLERÍA</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
-                    <div class="categoria card h-100 border-1 border-dark">
-                        <img src="..." class="card-img-top h-100" alt="...">
-                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
-                            <h5 class="card-title text-center fw-bold m-0">HERRAMIENTAS</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col">
-                <a asp-area="Admin" asp-controller="Bodega" asp-action="Index" class="text-decoration-none text-black">
-                    <div class="categoria card h-100 border-1 border-dark">
-                        <img src="..." class="card-img-top h-100" alt="...">
-                        <div class="card-body border-1 border-dark p-3" style="background-color: #FFF114; border-top: solid;">
-                            <h5 class="card-title text-center fw-bold m-0">FERRETERÍA EN GENERAL</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            }
         </div>
     </div>
     <!-- Fin zona de cards -->
@@ -117,244 +87,46 @@
                 <!-- Carrusel de Cards -->
                 <div class="container slick_cards">
                     <!-- Contenido del carrusel aquí -->
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                             class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
+                        @foreach(var producto in productos){
+                            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+                                <div class="prod-card card h-100">
+                                    <img src="@Ds.ImagenRuta@producto.ImagenUrl"
+                                         class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="mb-0">@producto.Nombre</h6>
+                                        </div>
+                                        @foreach(var marca in marcas){
+                                            if(marca.Id == producto.MarcaId){
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <p class="small"><a href="#!" class="text-muted">@marca.Nombre</a></p>
+                                                </div>
+                                            }
+                                        }
 
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
+                                        <div class="d-flex justify-content-between mb-0">
+                                            <p class="small text-danger m-0"><s>$@String.Format("{0:#,##0.00}", producto.Precio)</s></p>
+                                        </div>
 
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <h4 class="text-dark mb-0">$@String.Format("{0:#,##0.00}", producto.Precio)</h4>
+                                        </div>
 
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
+                                        <!--
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <p class="text-muted mb-0">Disponible: <span class="fw-bold">6</span></p>
+                                            </div>
+                                        -->
 
-                                <!--
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <p class="text-muted mb-0">Disponible: <span class="fw-bold">6</span></p>
+                                        <div class="botonCarritoProd">
+                                            <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
+                                                <p class="m-0">Agregar al carrito</p>
+                                            </button>
+                                        </div>
                                     </div>
-                                -->
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.imprentaonline.net/blog/wp-content/webpc-passthru.php?src=https://www.imprentaonline.net/blog/wp-content/uploads/DALL%C2%B7E-2023-10-16-10.41.49-Illustration-depicting-a-humanoid-robot-with-half-of-its-face-transparent-revealing-intricate-circuits-and-gears-inside.-The-robot-is-holding-a-light-1.png&nocache=1"
-                         class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                                 class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                                 class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                                 class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                                 class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                                 class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-                        <div class="prod-card card h-100">
-                            <img src="https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis.jpg"
-                                 class="card-img-top container pt-2 pb-2 img-fluid" style="height:13rem; overflow:hidden" alt="" />
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Contacto DPLX con tierra 3 módulos platino</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-1">
-                                    <p class="small"><a href="#!" class="text-muted">Leviton</a></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-0">
-                                    <p class="small text-danger m-0"><s>$1099</s></p>
-                                </div>
-
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h4 class="text-dark mb-0">$999</h4>
-                                </div>
-
-                                <div class="botonCarritoProd">
-                                    <button class="btn btn-outline-dark w-100 bkg-cl-primario" type="">
-                                        <p class="m-0">Agregar al carrito</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        }
                 </div>
     </div>
 </div>

@@ -15,9 +15,5 @@ namespace TlapaleriaCeja.Areas.Inventario.Controllers
         {
             return View();
         }
-        public IActionResult Contacto()
-        {
-            return View();
-        }
     }
 }

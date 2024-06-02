@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="~/detailSpero_files/responsive.css">
 
 
-
-
+    <link rel="shortcut icon" href="~/img/Logo_Sitio_Negro.ico" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TlapaleriaCeja.styles.css" asp-append-version="true" />
@@ -79,16 +78,17 @@
                             <a class="nav-link text-dark dropdown-toggle text-center fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
-                            <ul class="dropdown-menu" style="width: 100%;" aria-labelledby="navbarDropdown">
-                                <li class="mt-0">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Bodega" asp-action="Index">Bodegas</a>
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Categoria" asp-action="Index">Categorias</a>
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Marca" asp-action="Index">Marcas</a>
-                                </li>
+                            <ul class="dropdown-menu " style="width: 100%;" aria-labelledby="navbarDropdown">
+                                @await Component.InvokeAsync("CategoriaMenu")
                             </ul>
                         </li>
-                        <li class="nav-item mt-0" style="width: 12%;">
-                            <a class="nav-link text-dark text-center fs-5" asp-area="" asp-controller="" asp-action="">Marcas</a>
+                        <li class="nav-item dropdown mt-0" style="width: 12%;">
+                            <a class="nav-link text-dark dropdown-toggle text-center fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Marcas
+                            </a>
+                            <ul class="dropdown-menu mr-auto" style="width: 100%;" aria-labelledby="navbarDropdown">
+                                @await Component.InvokeAsync("MarcaMenu")
+                            </ul>
                         </li>
                         <li class="nav-item mt-0" style="width: 12%;">
                             <a class="nav-link text-dark text-center fs-5" asp-area="" asp-controller="" asp-action="">Ofertas</a>
@@ -102,13 +102,15 @@
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Bodega" asp-action="Index">Bodegas</a>
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Categoria" asp-action="Index">Categorias</a>
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Marca" asp-action="Index">Marcas</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Producto" asp-action="Index">Productos</a>
                                     <a class="dropdown-item" asp-area="Inventario" asp-controller="ProductoDetalle" asp-action="ProductoDetalle">ProductoDetalle</a>
-                                    <a class="dropdown-item" asp-area="Inventario" asp-controller="ProductoDetalle" asp-action="Contacto">Contacto</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Contacto">Contacto</a>
+                                    <a class="dropdown-item" asp-area="Inventario" asp-controller="ProductoCatalogo" asp-action="ProductoCatalogo">ProductoCatalogo</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item mt-0" style="width: 12%;">
-                            <a class="nav-link text-dark text-center fs-5" asp-area="" asp-controller="Home" asp-action="Privacy">Contacto</a>
+                            <a class="nav-link text-dark text-center fs-5" asp-area="" asp-controller="Home" asp-action="Contacto">Contacto</a>
                         </li>
                     </ul>
                 </div>

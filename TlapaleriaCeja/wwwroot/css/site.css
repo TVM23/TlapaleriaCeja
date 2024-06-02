@@ -37,6 +37,10 @@ html {
     color: #FFF114 !important;
 }
 
+.dropdown-menu .dropdown-item {
+    border-bottom: 1px solid #dee2e6;
+}
+
 /* Efecto hover para el contenedor principal de la tarjeta */
 .categoria.card:hover .card-body {
     /* Estilos para el cuerpo de la tarjeta y la imagen */

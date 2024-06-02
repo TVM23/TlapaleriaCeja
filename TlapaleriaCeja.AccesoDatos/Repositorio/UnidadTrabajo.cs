@@ -15,6 +15,7 @@ namespace TlapaleriaCeja.AccesoDatos.Repositorio
         public IBodegaRepositorio Bodega { get; set; }  //AHORA SI SE REQUIERE DE GETTER Y SETTER
         public ICategoriaRepositorio Categoria { get; set; }
         public IMarcaRepositorio Marca { get; set; }
+        public IProductoRepositorio Producto { get; set; }
 
         public UnidadTrabajo(ApplicationDbContext db)
         {
@@ -22,6 +23,7 @@ namespace TlapaleriaCeja.AccesoDatos.Repositorio
             Bodega = new BodegaRepositorio(_db);
             Categoria = new CategoriaRepositorio(_db);
             Marca = new MarcaRepositorio(_db);
+            Producto = new ProductoRepositorio(_db);
         }
 
         public void Dispose()

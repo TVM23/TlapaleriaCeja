@@ -21,7 +21,7 @@ namespace TlapaleriaCeja.Modelos
         [MaxLength(12, ErrorMessage = "Máximo 12 caracteres")]
         public string SKU { get; set; }
 
-        [Required(ErrorMessage = "El número de serie es requerido")]
+
         [MaxLength(30, ErrorMessage = "Máximo 30 caracteres")]
         public string NumeroSerie { get; set; }
 
@@ -30,11 +30,13 @@ namespace TlapaleriaCeja.Modelos
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "El precio es requerido")]
+        [Range(0, double.MaxValue, ErrorMessage = "El precio debe ser mayor o igual a cero")]
         public double Precio { get; set; }
 
         [Required(ErrorMessage = "El costo es requerido")]
+        [Range(0, double.MaxValue, ErrorMessage = "El costo debe ser mayor o igual a cero")]
         public double Costo { get; set; }
-
+        
         public string ImagenUrl { get; set; }
 
         [Required(ErrorMessage = "El estado es requerido")]

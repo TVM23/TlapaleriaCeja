@@ -1,10 +1,11 @@
 ﻿@model TlapaleriaCeja.Modelos.Categoria
+@using TlapaleriaCeja.Utilidades
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     var titulo = "Crear Categoria";
 }
 <div class="container px-1 py-5 mx-auto pt-4 mt-5 card" style="box-shadow: 2px 2px 10px 2px rgba(22, 22, 26, 0.18);">
-    <form method="post" class="row d-flex justify-content-center">
+    <form method="post" class="row d-flex justify-content-center" enctype="multipart/form-data">
         <div style="padding-left:10%; padding-right:10%; padding-bottom:inherit.4rem;">
             <div class="row border-0"
                     <div asp-validation-summary="ModelOnly" class="text-danger">
@@ -15,47 +16,87 @@
             {
                 //Actualizar
                 titulo = "Actualizar Categoria";
-                <input type="hidden" asp-for="Id" />
+                <input asp-for="Id" hidden />
+                <input asp-for="ImagenUrl" hidden />
             }
             <!-- Mostrar titulo de la pagina -->
             <div class="col-12 border-botton p-0">
                 <h1 class="text-dark">@titulo</h1>
             </div>
             <!-- Campo nombre -->
-            <div class="row mb-2 mt-2">
-                <div class="form-group col-md-6">
-                    <label>Nombre</label>
-                    <input type="text" asp-for="Nombre" class="input-border form-control" placeholder="Nombre de la categoria" id="nombre" />
-                    <span asp-validation-for="Nombre" class="text-danger"></span>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="container">
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-8">
+                                <label>Nombre</label>
+                                <input type="text" asp-for="Nombre" class="input-border form-control" placeholder="Nombre de la categoria" id="nombre" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-8">
+                                <label>Descripción</label>
+                                <input type="text" asp-for="Descripcion" class="input-border form-control" placeholder="Descripción de la categoria" />
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-8">
+                                <label>Estado</label>
+                                <select asp-for="Estado" class="input-border form-select">
+                                    <option value=true>Activo</option>
+                                    <option value=false>Inactivo</option>
+                                </select>
+                                <span asp-validation-for="Estado" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-2">
+                            <div class="form-group col-md-8">
+                                <label>Imagen</label>
+                                <input type="file" accept="image/png,image/gif,image/jpeg" name="files" id="imagenId" class="input-border form-control" />
+                                <span asp-validation-for="ImagenUrl" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-lg">
+                    @if (Model.Id != 0)
+                    {
+                        <img src="@Ds.CategoriaImagenRuta@Model.ImagenUrl" width="100%" style="border-radius: 5px; border: 1px solid #bbb" />
+                    }
                 </div>
             </div>
-            <div class="row mb-2 mt-2">
-                <div class="form-group col-md-6">
-                    <label>Descripción</label>
-                    <input type="text" asp-for="Descripcion" class="input-border form-control" placeholder="Descripción de la categoria" />
-                    <span asp-validation-for="Descripcion" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="row mb-2 mt-2">
-                <div class="form-group col-md-6">
-                    <label>Estado</label>
-                    <select asp-for="Estado" class="input-border form-select">
-                        <option value=true>Activo</option>
-                        <option value=false>Inactivo</option>
-                    </select>
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
-            </div>
+
+            
             <!-- Presentamos vistas parciales -->
             <hr class="mt-3" />
             <div class="mt-3">
                 @if (Model.Id != 0)
                 {
-                    <partial name="_BotonesActualizarYRegresar" model="Model.Id" />
+                    <partial name="_botonesActualizarYRegresar" model="Model.Id" />
                 }
                 else
                 {
-                    <partial name="_BotonesCrearYRegresar" />
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-grid gap-2">
+                                <button type="submit" onclick="return validarImagen()" class="btn btn-primary btn-block h-100" style="max-height:100%">
+                                    <i class="bi bi-plus-square-fill"></i>
+                                    Crear
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="d-grid gap-2">
+                                <a class="regresar btn btn-success btn-block h-100" asp-action="Index" style="max-height:100%;">
+                                    <i class="bi bi-arrow-return-left"></i>
+                                    Regresar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 }
             </div>
         </div>
@@ -85,6 +126,16 @@
                     }
                 });
             })
+        }
+    </script>
+
+    <script>
+        function validarImagen() {
+            if (document.getElementById("imagenId").value == "") {
+                swal("ERROR", "¡Selecciona una imagen!", "error");
+                return false;
+            }
+            return true;
         }
     </script>
 }

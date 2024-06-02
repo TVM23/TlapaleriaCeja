@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
+using TlapaleriaCeja.Modelos.ViewModels;
 
 namespace TlapaleriaCeja.AccesoDatos.Repositorio
 {
@@ -23,6 +25,10 @@ namespace TlapaleriaCeja.AccesoDatos.Repositorio
             var categoriaDB = _db.Categorias.FirstOrDefault(b => b.Id == categoria.Id);
             if (categoriaDB != null)
             {
+                if (categoria.ImagenUrl != null)
+                {
+                    categoriaDB.ImagenUrl = categoria.ImagenUrl;
+                }
                 categoriaDB.Nombre = categoria.Nombre;
                 categoriaDB.Descripcion = categoria.Descripcion;
                 categoriaDB.Estado = categoria.Estado;

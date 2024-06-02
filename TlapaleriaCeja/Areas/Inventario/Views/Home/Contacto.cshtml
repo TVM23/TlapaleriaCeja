@@ -2,11 +2,11 @@
 	ViewData["Title"] = "Contacto";
 	Layout = "~/Views/Shared/_Layout.cshtml";
     string baseUrl = "https://localhost:7177";  <!-- CAMBIAR A ENLACE DOMINIO CUANDO SE TENGA -->
-    string nextUrl = baseUrl + Url.Action("Contacto", "ProductoDetalle", new { area = "Inventario" });
+    string nextUrl = baseUrl + Url.Action("Contacto", "Home", new { area = "Inventario" });
 }
 
 <!-- FIRST AREA START -->
-<div class="text-left mt-3">
+<div class="mt-3">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
